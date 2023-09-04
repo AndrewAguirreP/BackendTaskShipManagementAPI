@@ -24,5 +24,15 @@ jobs:
       run: dotnet restore
     - name: Build
       run: dotnet build --no-restore
-    - name: Test
-      run: dotnet test --no-build --verbosity normal
+    - name: run-unit-test
+      run: dotnet test -t:ShipManagement.Tests/bin/Debug/net6.0/ShipManagement.Tests.dll
+    - name: execute-test
+      run: dotnet test --logger "trx;LogFileName=test-results.trx" || true
+    - name: Test Report
+      uses: dorny/test-reporter@v1
+      if: always()
+      with:
+        name: Dotnet Tests
+        path: "**/test-results.trx"
+        reporter: dotnet-trx
+        fail-on-error: true
