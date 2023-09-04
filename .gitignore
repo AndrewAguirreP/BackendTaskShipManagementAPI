@@ -1,0 +1,8 @@
+/ShipManagement/obj
+/ShipManagement.Tests/obj
+
+/ShipManagement/bin
+/ShipManagement.Tests/bin
+/.vs
+/.vscode
+
