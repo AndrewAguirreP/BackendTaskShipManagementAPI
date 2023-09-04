@@ -9,8 +9,15 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShipManagement.Tests", "Shi
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{80292F5B-7884-4C9E-B342-DEFED2F3BB32}"
 	ProjectSection(SolutionItems) = preProject
-		dotnet.yaml = dotnet.yaml
+		.gitignore = .gitignore
 		README.md = README.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".github", ".github", "{D2320077-20CD-411E-84BB-CD2322C02E91}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "workflow", "workflow", "{75C6E798-2604-4D59-A798-0AE13CBB9F3D}"
+	ProjectSection(SolutionItems) = preProject
+		dotnet.yml = dotnet.yml
 	EndProjectSection
 EndProject
 Global
@@ -30,6 +37,9 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{75C6E798-2604-4D59-A798-0AE13CBB9F3D} = {D2320077-20CD-411E-84BB-CD2322C02E91}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {99240666-CB6A-4CD2-846B-B990049B8A9F}
