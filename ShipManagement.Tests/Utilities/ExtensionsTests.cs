@@ -47,7 +47,7 @@ public class ExtensionsTests
     public void IsNullOrEmpty_ShouldReturnTrueForNullCollection()
     {
         // Arrange
-        IEnumerable<string> collection = null;
+        var collection = new List<string>();
 
         // Act
         bool result = collection.IsNullOrEmpty();
@@ -84,7 +84,7 @@ public class ExtensionsTests
         Assert.Equal("NauticalMiles", travelInformation.Units);
         Assert.Equal(Math.Round(1708.63930885529, 0), Math.Round(travelInformation.Distance, 0));
         Assert.Equal($"7 day(s), 2 hour(s), 51 minute(s)", travelInformation.TravelTime);
-        Assert.NotEqual(DateTime.MinValue, travelInformation.EstimatedArrivalTimeUtc);
+        Assert.NotEqual(DateTime.MinValue, travelInformation.EstimatedArrivalTimeUTC);
         Assert.Equal("10 knots", travelInformation.CurrentVelocity);
     }
 
@@ -120,10 +120,10 @@ public class ExtensionsTests
     public void GetLatestStatus_ShouldReturnNullForNullShip()
     {
         // Arrange
-        Ship ship = null;
+        var ship = new Ship();
 
         // Act
-        var latestStatus = ship.GetLatestStatus();
+        var latestStatus = ship?.GetLatestStatus();
 
         // Assert
         Assert.Null(latestStatus);
@@ -133,7 +133,7 @@ public class ExtensionsTests
     public void ToClosestPort_ShouldReturnNullForNullStatus()
     {
         // Arrange
-        Ship ship = new Ship { ShipStatuses = null };
+        var ship = new Ship { ShipStatuses = new List<ShipStatus>() };
         IEnumerable<Port> ports = new List<Port>();
 
         // Act

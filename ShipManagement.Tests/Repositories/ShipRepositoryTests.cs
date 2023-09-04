@@ -52,7 +52,7 @@ public class ShipRepositoryTests
 
         // Assert
         Assert.NotNull(ship);
-        Assert.Equal("Ship1", ship.Name);
+        Assert.Equal("Ship1", ship?.Name);
     }
 
     [Fact]

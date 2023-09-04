@@ -14,6 +14,6 @@ namespace ShipManagement.Repositories.Models
 
         [ForeignKey("Ship")]
         public int ShipId { get; set; }
-        public Ship Ship { get; set; }
+        public Ship Ship { get; set; } = null!;
     }
 }

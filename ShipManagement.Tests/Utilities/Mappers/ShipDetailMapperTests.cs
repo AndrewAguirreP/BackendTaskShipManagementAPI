@@ -39,9 +39,9 @@ namespace ShipManagement.Tests.Utilities.Mappers
             Assert.Equal(ship.UniqueShipId, mappedShipDetail.UniqueShipId);
             Assert.Equal(ship.Name, mappedShipDetail.Name);
             Assert.NotNull(mappedShipDetail.CurrentGeoLocation);
-            Assert.Equal(ship.ShipStatuses.First().Latitude, mappedShipDetail.CurrentGeoLocation.Latitude);
-            Assert.Equal(ship.ShipStatuses.First().Longitude, mappedShipDetail.CurrentGeoLocation.Longitude);
-            Assert.Equal(ship.ShipStatuses.First().Velocity, mappedShipDetail.Velocity);
+            Assert.Equal(ship.ShipStatuses.First().Latitude, mappedShipDetail?.CurrentGeoLocation?.Latitude);
+            Assert.Equal(ship.ShipStatuses.First().Longitude, mappedShipDetail?.CurrentGeoLocation?.Longitude);
+            Assert.Equal(ship.ShipStatuses.First().Velocity, mappedShipDetail?.Velocity);
 
             // You can also add more assertions as needed
         }
@@ -78,9 +78,9 @@ namespace ShipManagement.Tests.Utilities.Mappers
             Assert.Equal(ship.UniqueShipId, mappedShipDetail.UniqueShipId);
             Assert.Equal(ship.Name, mappedShipDetail.Name);
             Assert.NotNull(mappedShipDetail.CurrentGeoLocation);
-            Assert.Equal(ship.ShipStatuses.First().Latitude, mappedShipDetail.CurrentGeoLocation.Latitude);
-            Assert.Equal(ship.ShipStatuses.First().Longitude, mappedShipDetail.CurrentGeoLocation.Longitude);
-            Assert.Equal(ship.ShipStatuses.First().Velocity, mappedShipDetail.Velocity);
+            Assert.Equal(ship.ShipStatuses.First().Latitude, mappedShipDetail?.CurrentGeoLocation?.Latitude);
+            Assert.Equal(ship.ShipStatuses.First().Longitude, mappedShipDetail?.CurrentGeoLocation?.Longitude);
+            Assert.Equal(ship.ShipStatuses.First().Velocity, mappedShipDetail?.Velocity);
 
         }
     }

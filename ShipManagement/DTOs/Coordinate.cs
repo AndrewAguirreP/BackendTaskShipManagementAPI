@@ -1,8 +1,5 @@
-﻿using DataAnnotationsExtensions;
-
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 using System.Runtime.Serialization;
-using System.Xml.Linq;
 
 namespace ShipManagement.DTOs
 {
@@ -13,6 +10,8 @@ namespace ShipManagement.DTOs
             Latitude = latitude;
             Longitude = longitude;
         }
+
+        public GeoLocation() { }
 
 
         //The latitude must be a number between -90 and 90 and the longitude between -180 and 180.

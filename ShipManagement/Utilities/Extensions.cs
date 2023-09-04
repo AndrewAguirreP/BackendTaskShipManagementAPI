@@ -29,7 +29,7 @@ namespace ShipManagement.Common
                 Units = "NauticalMiles",
                 Distance = distanceNauticalMiles,
                 TravelTime = $"N/A",
-                EstimatedArrivalTimeUtc = null,
+                EstimatedArrivalTimeUTC = null,
                 CurrentVelocity = $"{velocityKnots} knots"
             };
 
@@ -50,7 +50,7 @@ namespace ShipManagement.Common
                     Units = "NauticalMiles",
                     Distance = distanceNauticalMiles,
                     TravelTime = $"{days} day(s), {hours} hour(s), {minutes} minute(s)",
-                    EstimatedArrivalTimeUtc = estimateDArrivalTime,
+                    EstimatedArrivalTimeUTC = estimateDArrivalTime,
                     CurrentVelocity = $"{velocityKnots} knots"
                 };
             }

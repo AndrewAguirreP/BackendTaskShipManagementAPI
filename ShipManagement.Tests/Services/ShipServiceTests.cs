@@ -144,8 +144,8 @@ public class ShipServiceTests
         var result = await shipService.GetClosestPortAsync(shipId);
 
         Assert.NotNull(result);
-        Assert.NotNull(result.ClosestPort);
-        Assert.NotNull(result.TravelInformation);
+        Assert.NotNull(result?.ClosestPort);
+        Assert.NotNull(result?.TravelInformation);
     }
 
     [Fact]
@@ -198,7 +198,7 @@ public class ShipServiceTests
         var result = await shipService.GetClosestPortAsync(shipId);
 
         Assert.NotNull(result);
-        Assert.NotNull(result.ShipDetail);
-        Assert.NotNull(result.TravelInformation);
+        Assert.NotNull(result?.ShipDetail);
+        Assert.NotNull(result?.TravelInformation);
     }
 }
