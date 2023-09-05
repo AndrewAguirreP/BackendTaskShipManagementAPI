@@ -1,6 +1,6 @@
-# Ship Management System
+# AE Backend Code Challenge
 
-The Ship Management System is a software application designed to manage and track information related to ships, ports, and their statuses. 
+The AE Backend Code Challenge Ship Management is a software application designed to manage and track information related to ships, ports, and their statuses. 
 This README provides an overview of the system, its features, instructions for installation and usage, and information about GitHub Actions for continuous integration.
 
 This Simple API is based from AE's https://github.com/angloeastern/backend-coding-task Code Challenge
@@ -176,6 +176,11 @@ Docker image repository[https://hub.docker.com/r/aaguirre02/andrew-aguirre-ship-
     docker run --rm -it -p 8000:80 -p 8001:443 -e ASPNETCORE_URLS="https://+;http://+" -e ASPNETCORE_HTTPS_PORT=8001 -e ASPNETCORE_Kestrel__Certificates__Default__Password="f@$tChess" -e ASPNETCORE_Kestrel__Certificates__Default__Path=/https/aspnetapp.pfx -v %USERPROFILE%\.aspnet\https:/https/ -e ASPNETCORE_ENVIRONMENT=Development         aaguirre02/andrew-aguirre-ship-management:latest
 
 ```
+
+## Many Thanks
+
+I would like to say thank you for this opportunity, This is very amazing, in a short period of time around two days I was able to challenge myself to build an application with Test, CI, and a production ready app for a POC.
+I look forward for your review and feedback, I admit the app is not perfect and not bullet proof at the moment but if given more time I can add more improvement to the code.
 
 
   
