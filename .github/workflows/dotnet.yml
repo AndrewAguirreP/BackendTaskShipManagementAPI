@@ -25,7 +25,7 @@ jobs:
     - name: Build
       run: dotnet build --no-restore
     - name: run-unit-test
-      run: dotnet test -t:/ShipManagement.Tests/bin/Debug/net6.0/ShipManagement.Tests.dll
+      run: dotnet test -t:/BackendTaskShipManagementAPI/ShipManagement.Tests/bin/Debug/net6.0/ShipManagement.Tests.dll
     - name: execute-test
       run: dotnet test --logger "trx;LogFileName=test-results.trx" || true
     - name: Test Report
