@@ -121,14 +121,14 @@ Before you begin, ensure you have met the following requirements:
   - In the Ship Entity, I identified the Shipname and UniqueId as static fields or fields that are not transactional, I designed the table based on real life used, 
 	- The Ship Status class is to be populated each time the Ship checked in to the system, this table can be used to show AuditLogs, or see ships previous data, instead of having a all Data in Ship Entity, since Velocity, Longitude/Latitude are transactional for the Ship, where in Port Entity Longitude and Latitude are static fields.
 
-- For Code Structure
+ ### For Code Structure
  - I used Repository Pattern with Service layer implementation.
  - To Keep it simple for the POC, instead of breaking each Layer into Projects I organized the code via Folder
    , However in real life application each Layer is best to be separated by Projects.
 - The Pattern has 3 Layers
-   **Controllers** - This Layer is the endpoint or client access layer.
-   **Service**     - This Layer is the Business layer where validation and business logic is being implemented.
-   **Repository**  - This Layer is the Data access layer where the application code access the data.
+   - **Controllers** - This Layer is the endpoint or client access layer.
+   - **Service**     - This Layer is the Business layer where validation and business logic is being implemented.
+   - **Repository**  - This Layer is the Data access layer where the application code access the data.
 
 - For this POC I have implemented this simple layers to decouple each concerns needed for each requirements.
 - The Models are Separated too by DTOs and Entities. For me this is the most important part of the application and provides following advantage:
