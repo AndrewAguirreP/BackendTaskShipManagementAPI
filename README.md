@@ -133,25 +133,25 @@ Before you begin, ensure you have met the following requirements:
 - For this POC I have implemented this simple layers to decouple each concerns needed for each requirements.
 - The Models are Separated too by DTOs and Entities. For me this is the most important part of the application and provides following advantage:
  
- - **Separation of Concerns:** DTOs and Entities serve different purposes. Entities represent your data model, and DTOs represent the data you want to transfer between different parts of your application, such as between your server and client. By keeping them separate, you maintain a clear separation of concerns and ensure that your data model isn't tightly coupled with your communication layer.
+	 - **Separation of Concerns:** DTOs and Entities serve different purposes. Entities represent your data model, and DTOs represent the data you want to transfer between different parts of your application, such as between your server and client. By keeping them separate, you maintain a clear separation of concerns and ensure that your data model isn't tightly coupled with your communication layer.
 
-- **Reduced Overhead:** Entities often contain more data than you need to transfer over the network or between different layers of your application. By using DTOs, you can create lightweight representations of your data, containing only the necessary fields, which can reduce the amount of data transferred and improve performance.
+	- **Reduced Overhead:** Entities often contain more data than you need to transfer over the network or between different layers of your application. By using DTOs, you can create lightweight representations of your data, containing only the necessary fields, which can reduce the amount of data transferred and improve performance.
 
-- **Versioning and Compatibility:** As your application evolves, your data model (Entities) might change. If you use DTOs, you have more control over the versioning and compatibility of your API or communication protocols. You can introduce new DTOs without necessarily changing your Entities, ensuring backward compatibility for existing clients.
+	- **Versioning and Compatibility:** As your application evolves, your data model (Entities) might change. If you use DTOs, you have more control over the versioning and compatibility of your API or communication protocols. You can introduce new DTOs without necessarily changing your Entities, ensuring backward compatibility for existing clients.
 
-- **Security:** DTOs allow you to control which data is exposed externally. You can omit sensitive or unnecessary information from DTOs, providing an additional layer of security. This is important when dealing with APIs exposed to the internet.
+	- **Security:** DTOs allow you to control which data is exposed externally. You can omit sensitive or unnecessary information from DTOs, providing an additional layer of security. This is important when dealing with APIs exposed to the internet.
 
-- **Optimized Queries:** When retrieving data from a database, you can often use DTOs to specify exactly which fields you need, reducing the overhead of loading unnecessary data from the database. This is known as "projection" and can significantly improve database query performance.
+	- **Optimized Queries:** When retrieving data from a database, you can often use DTOs to specify exactly which fields you need, reducing the overhead of loading unnecessary data from the database. This is known as "projection" and can significantly improve database query performance.
 
-- **Flexibility:** DTOs provide flexibility when it comes to structuring and organizing your data for different use cases. You can create multiple DTOs for the same Entity to cater to various scenarios, without altering the underlying data model.
+	- **Flexibility:** DTOs provide flexibility when it comes to structuring and organizing your data for different use cases. You can create multiple DTOs for the same Entity to cater to various scenarios, without altering the underlying data model.
 
-- **Client-Specific Data:** DTOs allow you to shape data specifically for the needs of different clients or consumers of your API. For example, a web client and a mobile app may require slightly different data structures. DTOs enable you to customize the data sent to each client without affecting the underlying Entities.
+	- **Client-Specific Data:** DTOs allow you to shape data specifically for the needs of different clients or consumers of your API. For example, a web client and a mobile app may require slightly different data structures. DTOs enable you to customize the data sent to each client without affecting the underlying Entities.
 
-- **Testing:** DTOs can simplify unit testing. Since they are typically plain data objects without complex behavior, you can create and manipulate them more easily in tests.
+	- **Testing:** DTOs can simplify unit testing. Since they are typically plain data objects without complex behavior, you can create and manipulate them more easily in tests.
 
-- **Documentation and Self-Documentation:** DTOs can serve as documentation for the data exchanged between different parts of your application. They make it clear what data is expected and what data is being transferred.
+	- **Documentation and Self-Documentation:** DTOs can serve as documentation for the data exchanged between different parts of your application. They make it clear what data is expected and what data is being transferred.
 
-- **Code Maintainability:** Separating DTOs from Entities often leads to cleaner and more maintainable code. It helps prevent issues related to serialization, data validation, and data mapping from contaminating your domain model. 
+	- **Code Maintainability:** Separating DTOs from Entities often leads to cleaner and more maintainable code. It helps prevent issues related to serialization, data validation, and data mapping from contaminating your domain model. 
 
 ## Deployment
  - Deployment and Continuous Integration
