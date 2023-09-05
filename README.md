@@ -1,4 +1,4 @@
-![image](https://github.com/AndrewAguirreP/BackendTaskShipManagementAPI/assets/11619541/9641f1ab-1cb0-49d9-8b70-f55d95ddbf1f)# AE Backend Code Challenge
+# AE Backend Code Challenge
 
 The AE Backend Code Challenge Ship Management is a software application designed to manage and track information related to ships, ports, and their statuses. 
 This README provides an overview of the system, its features, instructions for installation and usage, and information about GitHub Actions for continuous integration.
