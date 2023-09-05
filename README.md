@@ -1,4 +1,4 @@
-# AE Backend Code Challenge
+![image](https://github.com/AndrewAguirreP/BackendTaskShipManagementAPI/assets/11619541/9641f1ab-1cb0-49d9-8b70-f55d95ddbf1f)# AE Backend Code Challenge
 
 The AE Backend Code Challenge Ship Management is a software application designed to manage and track information related to ships, ports, and their statuses. 
 This README provides an overview of the system, its features, instructions for installation and usage, and information about GitHub Actions for continuous integration.
@@ -157,18 +157,21 @@ Before you begin, ensure you have met the following requirements:
  - Deployment and Continuous Integration
 
 
-### GitHub Actions
+  ### GitHub Actions
 
-This application is deployed using GitHub Actions, which automate the build, test, and deployment processes to streamline development and ensure code quality.
+  This application is deployed using GitHub Actions, which automate the build, test, and deployment processes to streamline development and ensure code quality.
 
-- **Build and Test:** GitHub Actions automatically build and test the application whenever changes are pushed to the repository. This ensures that the code remains reliable and functional.
+  - **Build and Test:** GitHub Actions automatically build and test the application whenever changes are pushed to the repository. This ensures that the code remains reliable and functional.
+      ![image](https://github.com/AndrewAguirreP/BackendTaskShipManagementAPI/assets/11619541/e4988fa2-b2b1-44b7-bd8a-6d398ef41659)
 
 ### Docker Deployment
 
-This POC also setup for deployment any environment via docker, upon version **Release** a github action that build and push the docker image to this repository for deployment, this image can be pulled in an hosting environment on Azure/AWS.
-Docker image repository[https://hub.docker.com/r/aaguirre02/andrew-aguirre-ship-management] 
+  This POC also setup for deployment any environment via docker, upon version **Release** a github action that build and push the docker image to this repository for deployment, this image can be pulled in any hosting environment on Azure/AWS.
+  Docker image repository[https://hub.docker.com/r/aaguirre02/andrew-aguirre-ship-management] 
+     ![image](https://github.com/AndrewAguirreP/BackendTaskShipManagementAPI/assets/11619541/f5c4e175-2311-4834-be1a-65b0cbe28027)
+     ![image](https://github.com/AndrewAguirreP/BackendTaskShipManagementAPI/assets/11619541/bc73d28f-d6f8-4b77-bd85-3e4ab079d9d7)
 
-- To Pull and Run the Image on your local environment
+  - To Pull and Run the Image on your local environment
   
 ```bash
     docker pull aaguirre02/andrew-aguirre-ship-management:latest
