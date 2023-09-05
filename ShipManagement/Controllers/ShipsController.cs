@@ -2,7 +2,6 @@
 
 using ShipManagement.Common;
 using ShipManagement.DTOs;
-using ShipManagement.Repositories.Interfaces;
 using ShipManagement.Services.Interfaces;
 
 using System.ComponentModel.DataAnnotations;
@@ -19,6 +18,11 @@ public class ShipsController : ControllerBase
     
 
     [HttpGet]
+    [ProducesResponseType(typeof(IEnumerable<ShipDetail>), StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status204NoContent)]
+    [ProducesResponseType(StatusCodes.Status400BadRequest)]
+    [ProducesResponseType(StatusCodes.Status404NotFound)]
+    [ProducesResponseType(StatusCodes.Status500InternalServerError)]
     public async Task<ActionResult<IEnumerable<ShipDetail>>> GetShips()
     {
         var ships = await _shipService.GetShipsAsync();
@@ -30,20 +34,37 @@ public class ShipsController : ControllerBase
     }
 
     [HttpGet("{id}")]
+    [ProducesResponseType(typeof(ShipDetail), StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status400BadRequest)]
+    [ProducesResponseType(StatusCodes.Status404NotFound)]
+    [ProducesResponseType(StatusCodes.Status500InternalServerError)]
     public async Task<ActionResult<ShipDetail>> GetShipAsync([FromRoute] int id)
         => await _shipService.GetByIdAsync(id) is ShipDetail ship ? Ok(ship) : NotFound();
 
     [HttpPost]
+    [HttpGet("{id}")]
+    [ProducesResponseType(StatusCodes.Status201Created)]
+    [ProducesResponseType(StatusCodes.Status409Conflict)]
+    [ProducesResponseType(StatusCodes.Status400BadRequest)]
+    [ProducesResponseType(StatusCodes.Status500InternalServerError)]
     public async Task<IActionResult> CreateShipAsync([FromBody] CreateShipRequest request) 
         => await _shipService.CreateShipAsync(request) ? Created("", "Success") : Conflict();
     
 
     [HttpPatch("{id}/velocity")]
+    [ProducesResponseType(StatusCodes.Status204NoContent)]
+    [ProducesResponseType(StatusCodes.Status404NotFound)]
+    [ProducesResponseType(StatusCodes.Status400BadRequest)]
+    [ProducesResponseType(StatusCodes.Status500InternalServerError)]
     public async Task<IActionResult> PatchShipsVelocityAsync([Required][FromRoute(Name = "id")] int id,
         [FromBody] PatchShipsVelocityRequest request) =>
          await _shipService.PatchShipsVelocityAsync(id, request) ? NoContent() : NotFound();
 
     [HttpGet("{id}/closest_port")]
+    [ProducesResponseType(typeof(ShipDetail), StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status400BadRequest)]
+    [ProducesResponseType(StatusCodes.Status404NotFound)]
+    [ProducesResponseType(StatusCodes.Status500InternalServerError)]
     public async Task<ActionResult<GetClosestPortResponse>> GetClosestPortAsync([FromRoute] int id) =>
         await _shipService.GetClosestPortAsync(id) is GetClosestPortResponse response && response?.ClosestPort?.Id > 0 ? Ok(response) : NotFound();
     
