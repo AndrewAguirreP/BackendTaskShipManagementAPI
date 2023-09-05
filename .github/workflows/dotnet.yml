@@ -24,12 +24,10 @@ jobs:
       run: dotnet restore
     - name: Build
       run: dotnet build --no-restore
-    - name: run-unit-test
-      run: dotnet test
     - name: execute-test
       run: dotnet test --logger "trx;LogFileName=test-results.trx" || true
-    - name: Test Report
-      uses: dorny/test-reporter@v1
+    - name: Test Reporter
+      uses: dorny/test-reporter@v1.6.0
       if: always()
       with:
         name: Dotnet Tests
