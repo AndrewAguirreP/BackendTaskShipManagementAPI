@@ -5,18 +5,18 @@ WORKDIR /app
 EXPOSE 80
 EXPOSE 443
 
-ENV DOTNET_URLS=http://+:5000
+ENV ASPNETCORE_URLS=http://+:80
 
 FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
 WORKDIR /src
-COPY ["ShipManagement/ShipManagement.csproj", "ShipManagement/"]
-RUN dotnet restore "ShipManagement/ShipManagement.csproj"
+COPY ["ShipManagement.csproj", "."]
+RUN dotnet restore "./ShipManagement.csproj"
 COPY . .
-WORKDIR "/src/ShipManagement"
+WORKDIR "/src/."
 RUN dotnet build "ShipManagement.csproj" -c Release -o /app/build
 
 FROM build AS publish
-RUN dotnet publish "ShipManagement.csproj" -c Release -o /app/publish /p:UseAppHost=false
+RUN dotnet publish "ShipManagement.csproj" -c Release -o /app/publish
 
 FROM base AS final
 WORKDIR /app

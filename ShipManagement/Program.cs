@@ -63,8 +63,6 @@ namespace ShipManagement
             builder.Services.AddTransient<IShipService, ShipService>();
             builder.Services.AddTransient<IShipRepository, ShipRepository>();
             builder.Services.AddTransient<IPortRepository, PortRepository>();
-
-
         }
     }
 }
