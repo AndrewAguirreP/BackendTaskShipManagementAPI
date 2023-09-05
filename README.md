@@ -185,7 +185,7 @@ Before you begin, ensure you have met the following requirements:
 
 ## Many Thanks
 
-I would like to say thank you for this opportunity, This is very amazing, in a short period of time around two days I was able to challenge myself to build an application with Test, CI, and a production ready app for a POC.
+I would like to say thank you for this opportunity, This is very amazing, in a short period of time (around 2 days), This challenge have pushed me to build an application with Test, CI, and a production ready app for a POC, and I am very grateful for this Code Challenge.
 I look forward for your review and feedback, I admit the app is not perfect and not bullet proof at the moment but if given more time I can add more improvement to the code.
 
 
