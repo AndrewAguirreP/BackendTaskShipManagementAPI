@@ -26,11 +26,14 @@ jobs:
       run: dotnet build --no-restore
     - name: execute-test
       run: dotnet test --logger "trx;LogFileName=test-results.trx" || true
+    - name: List Test Report Files
+      run: ls -R
+      working-directory: ./BackendTaskShipManagementAPI/BackendTaskShipManagementAPI/ShipManagement.Tests/TestResults
     - name: Test Reporter
       uses: dorny/test-reporter@v1.6.0
       if: always()
       with:
         name: Dotnet Tests
-        path: "**/BackendTaskShipManagementAPI/BackendTaskShipManagementAPI/ShipManagement.Tests/TestResults/test-results.trx"
+        path: "./TestResults/test-results.trx"
         reporter: dotnet-trx
         fail-on-error: true
