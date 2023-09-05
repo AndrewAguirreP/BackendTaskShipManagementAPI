@@ -20,7 +20,7 @@ This Simple API is based from AE's https://github.com/angloeastern/backend-codin
 ## Features
 
 - **Ship Management:**
-  - Add, edit, and delete ship records.
+  - Add ship and edit ships velocity.
   - View ship details including ship status, type, and more.
   - Track ship destinations and statuses.
 
