@@ -42,8 +42,6 @@ namespace ShipManagement.Tests.Utilities.Mappers
             Assert.Equal(ship.ShipStatuses.First().Latitude, mappedShipDetail?.CurrentGeoLocation?.Latitude);
             Assert.Equal(ship.ShipStatuses.First().Longitude, mappedShipDetail?.CurrentGeoLocation?.Longitude);
             Assert.Equal(ship.ShipStatuses.First().Velocity, mappedShipDetail?.Velocity);
-
-            // You can also add more assertions as needed
         }
 
         [Fact]

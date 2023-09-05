@@ -21,7 +21,7 @@ public class PortsController : ControllerBase
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
     [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-    public async Task<ActionResult<IEnumerable<PortDetail>>> GetPorts()
+    public async Task<ActionResult<IEnumerable<PortDetail>>> GetPortsAsync()
     {
         var ports = await _portService.GetPortsAsync();
 

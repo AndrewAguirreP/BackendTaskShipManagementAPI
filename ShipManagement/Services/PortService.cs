@@ -13,7 +13,7 @@ namespace ShipManagement.Services
         private readonly IPortRepository _portRepository;
         private IMapper _mapper;
 
-        public PortService(IShipRepository shipRepository, IPortRepository portRepository, IMapper mapper) => (_portRepository, _mapper) = (portRepository, mapper);
+        public PortService(IPortRepository portRepository, IMapper mapper) => (_portRepository, _mapper) = (portRepository, mapper);
 
         #region READ
 

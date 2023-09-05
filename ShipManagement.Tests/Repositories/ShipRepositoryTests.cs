@@ -5,7 +5,6 @@ using ShipManagement.Repositories;
 using ShipManagement.Repositories.Models;
 
 namespace ShipManagement.Tests.Repositories;
-
 public class ShipRepositoryTests
 {
     private DbContextOptions<ShipManagementContext> CreateNewContextOptions()

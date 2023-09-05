@@ -6,7 +6,7 @@ using Microsoft.Extensions.Logging;
 using ShipManagement.Repositories;
 using ShipManagement.Repositories.Models;
 
-namespace ShipManagement.Tests.Controllers;
+namespace ShipManagement.Tests.Repositories;
 public class PortRepositoryTests
 {
     private DbContextOptions<ShipManagementContext> CreateNewContextOptions()
