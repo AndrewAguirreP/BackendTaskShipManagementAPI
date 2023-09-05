@@ -42,7 +42,6 @@ public class ShipsController : ControllerBase
         => await _shipService.GetByIdAsync(id) is ShipDetail ship ? Ok(ship) : NotFound();
 
     [HttpPost]
-    [HttpGet("{id}")]
     [ProducesResponseType(StatusCodes.Status201Created)]
     [ProducesResponseType(StatusCodes.Status409Conflict)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]

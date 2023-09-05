@@ -60,6 +60,7 @@ namespace ShipManagement
         private static void SetupDependencies(WebApplicationBuilder builder)
         {
             builder.Services.AddScoped<ShipManagementContext>();
+            builder.Services.AddTransient<IPortService, PortService>();
             builder.Services.AddTransient<IShipService, ShipService>();
             builder.Services.AddTransient<IShipRepository, ShipRepository>();
             builder.Services.AddTransient<IPortRepository, PortRepository>();
