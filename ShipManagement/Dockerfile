@@ -9,10 +9,10 @@ ENV ASPNETCORE_URLS=http://+:80
 
 FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
 WORKDIR /src
-COPY ["ShipManagement.csproj", "."]
-RUN dotnet restore "./ShipManagement.csproj"
+COPY ["ShipManagement/ShipManagement.csproj", "ShipManagement/"]
+RUN dotnet restore "ShipManagement/ShipManagement.csproj"
 COPY . .
-WORKDIR "/src/."
+WORKDIR "/src/ShipManagement"
 RUN dotnet build "ShipManagement.csproj" -c Release -o /app/build
 
 FROM build AS publish
