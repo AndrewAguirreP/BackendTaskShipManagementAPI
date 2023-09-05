@@ -4,7 +4,8 @@ namespace ShipManagement.Services.Interfaces
 {
     public interface IShipService
     {
-        Task<GetClosestPortResponse?> GetClosestPortAsync(int shipId); 
+        Task<GetClosestPortResponse?> GetClosestPortAsync(int shipId);
+
         Task<IEnumerable<ShipDetail>> GetShipsAsync();
 
         Task<ShipDetail?> GetByIdAsync(int id);

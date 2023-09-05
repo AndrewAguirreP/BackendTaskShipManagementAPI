@@ -6,7 +6,7 @@ namespace ShipManagement.DTOs
     public class ShipDetail
     {
         [DataMember(Name = "id")]
-        public int Id { get; set;}
+        public int Id { get; set; }
 
         [Required]
         [DataMember(Name = "uniqueShipId")]

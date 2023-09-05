@@ -12,10 +12,11 @@ namespace ShipManagement.Utilities.Mappers
         {
             CreateMap<Ship, ShipDetail>()
                 .ForMember(destination => destination.CurrentGeoLocation,
-                        options => options.MapFrom((source, destination) => { 
+                        options => options.MapFrom((source, destination) =>
+                        {
                             var latestStatus = source.GetLatestStatus();
 
-                            return new GeoLocation(latestStatus?.Latitude ?? 0, latestStatus?.Longitude ?? 0); 
+                            return new GeoLocation(latestStatus?.Latitude ?? 0, latestStatus?.Longitude ?? 0);
                         }))
                 .ForMember(destination => destination.Name,
                         options => options.MapFrom((source, destination) => source.Name))

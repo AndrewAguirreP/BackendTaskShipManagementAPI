@@ -1,10 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Logging;
+﻿namespace ShipManagement.Tests.Repositories;
 
-using ShipManagement.Repositories;
-using ShipManagement.Repositories.Models;
-
-namespace ShipManagement.Tests.Repositories;
 public class ShipRepositoryTests
 {
     private DbContextOptions<ShipManagementContext> CreateNewContextOptions()

@@ -43,7 +43,7 @@ namespace ShipManagement
 
         private static void SeedDatabase(WebApplication app)
         {
-            using(var scope = app.Services.CreateScope())
+            using (var scope = app.Services.CreateScope())
             {
                 var services = scope.ServiceProvider;
                 var shipManagementContext = services.GetRequiredService<ShipManagementContext>();

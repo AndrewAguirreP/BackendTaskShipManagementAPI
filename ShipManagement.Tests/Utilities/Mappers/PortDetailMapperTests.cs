@@ -1,10 +1,4 @@
-﻿using AutoMapper;
-
-using ShipManagement.Common.Mappers;
-using ShipManagement.DTOs;
-using ShipManagement.Repositories.Models;
-
-namespace ShipManagement.Tests.Utilities.Mappers;
+﻿namespace ShipManagement.Tests.Utilities.Mappers;
 
 public class PortDetailMapperTests
 {

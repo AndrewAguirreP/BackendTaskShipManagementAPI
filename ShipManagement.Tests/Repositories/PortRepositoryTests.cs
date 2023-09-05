@@ -1,12 +1,5 @@
-﻿
+﻿namespace ShipManagement.Tests.Repositories;
 
-using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Logging;
-
-using ShipManagement.Repositories;
-using ShipManagement.Repositories.Models;
-
-namespace ShipManagement.Tests.Repositories;
 public class PortRepositoryTests
 {
     private DbContextOptions<ShipManagementContext> CreateNewContextOptions()

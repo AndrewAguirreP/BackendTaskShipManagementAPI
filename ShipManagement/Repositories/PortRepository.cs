@@ -1,8 +1,5 @@
-﻿using Microsoft.CodeAnalysis;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 
-using ShipManagement.Common;
-using ShipManagement.DTOs;
 using ShipManagement.Repositories.Interfaces;
 using ShipManagement.Repositories.Models;
 

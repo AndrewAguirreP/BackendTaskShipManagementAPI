@@ -1,9 +1,4 @@
-﻿using AutoMapper;
-using ShipManagement.DTOs;
-using ShipManagement.Repositories.Models;
-using ShipManagement.Utilities.Mappers;
-
-namespace ShipManagement.Tests.Utilities.Mappers
+﻿namespace ShipManagement.Tests.Utilities.Mappers
 {
     public class ShipDetailMapperTests
     {
@@ -79,7 +74,6 @@ namespace ShipManagement.Tests.Utilities.Mappers
             Assert.Equal(ship.ShipStatuses.First().Latitude, mappedShipDetail?.CurrentGeoLocation?.Latitude);
             Assert.Equal(ship.ShipStatuses.First().Longitude, mappedShipDetail?.CurrentGeoLocation?.Longitude);
             Assert.Equal(ship.ShipStatuses.First().Velocity, mappedShipDetail?.Velocity);
-
         }
     }
 }

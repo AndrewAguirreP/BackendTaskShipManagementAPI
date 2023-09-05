@@ -1,13 +1,5 @@
-﻿using AutoMapper;
+﻿namespace ShipManagement.Tests.Services;
 
-using Moq;
-
-using ShipManagement.DTOs;
-using ShipManagement.Repositories.Interfaces;
-using ShipManagement.Repositories.Models;
-using ShipManagement.Services;
-
-namespace ShipManagement.Tests.Services;
 public class ShipServiceTests
 {
     private readonly Mock<IShipRepository> shipRepositoryMock;
@@ -19,7 +11,6 @@ public class ShipServiceTests
         shipRepositoryMock = new Mock<IShipRepository>();
         portRepositoryMock = new Mock<IPortRepository>();
         mapperMock = new Mock<IMapper>();
-
     }
 
     [Fact]
@@ -44,7 +35,7 @@ public class ShipServiceTests
         shipRepositoryMock.Setup(x => x.GetByIdAsync(It.IsAny<int>())).ReturnsAsync(ship);
         mapperMock.Setup(m => m.Map<Ship, ShipDetail>(ship)).Returns(new ShipDetail() { Id = ship.Id });
         var shipService = new ShipService(shipRepositoryMock.Object, portRepositoryMock.Object, mapperMock.Object);
-        
+
         var result = await shipService.GetByIdAsync(shipId);
 
         Assert.NotNull(result);
@@ -70,7 +61,7 @@ public class ShipServiceTests
             }
         };
         shipRepositoryMock.Setup(r => r.GetShipsAsync()).ReturnsAsync(ships);
-        mapperMock.Setup(m => m.Map<IEnumerable<Ship>, IEnumerable<ShipDetail>>(ships)).Returns(new List<ShipDetail>() 
+        mapperMock.Setup(m => m.Map<IEnumerable<Ship>, IEnumerable<ShipDetail>>(ships)).Returns(new List<ShipDetail>()
         {
             new ShipDetail
             {
@@ -91,7 +82,6 @@ public class ShipServiceTests
         Assert.NotNull(result);
         Assert.Equal(ships.Count, result.Count());
     }
-
 
     [Fact]
     public async Task GetClosestPortAsync_ClosestPort_ShouldReturnGetClosestPortResponse()
@@ -137,7 +127,7 @@ public class ShipServiceTests
         portRepositoryMock.Setup(r => r.GetPortsAsync()).ReturnsAsync(ports);
 
         mapperMock.Setup(m => m.Map<Ship, ShipDetail>(ship)).Returns(new ShipDetail() { Id = 1, CurrentGeoLocation = new GeoLocation(38.0, -75.0) });
-        mapperMock.Setup(m => m.Map<Port, PortDetail>(closestPort)).Returns(new PortDetail() { Id = 2});
+        mapperMock.Setup(m => m.Map<Port, PortDetail>(closestPort)).Returns(new PortDetail() { Id = 2 });
 
         var shipService = new ShipService(shipRepositoryMock.Object, portRepositoryMock.Object, mapperMock.Object);
 

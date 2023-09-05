@@ -15,7 +15,6 @@ public class ShipsController : ControllerBase
     private readonly IShipService _shipService;
 
     public ShipsController(IShipService shipService) => _shipService = shipService;
-    
 
     [HttpGet]
     [ProducesResponseType(typeof(IEnumerable<ShipDetail>), StatusCodes.Status200OK)]
@@ -46,9 +45,8 @@ public class ShipsController : ControllerBase
     [ProducesResponseType(StatusCodes.Status409Conflict)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
     [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-    public async Task<IActionResult> CreateShipAsync([FromBody] CreateShipRequest request) 
+    public async Task<IActionResult> CreateShipAsync([FromBody] CreateShipRequest request)
         => await _shipService.CreateShipAsync(request) ? Created("", "Success") : Conflict();
-    
 
     [HttpPatch("{id}/velocity")]
     [ProducesResponseType(StatusCodes.Status204NoContent)]
@@ -66,5 +64,4 @@ public class ShipsController : ControllerBase
     [ProducesResponseType(StatusCodes.Status500InternalServerError)]
     public async Task<ActionResult<GetClosestPortResponse>> GetClosestPortAsync([FromRoute] int id) =>
         await _shipService.GetClosestPortAsync(id) is GetClosestPortResponse response && response?.ClosestPort?.Id > 0 ? Ok(response) : NotFound();
-    
 }

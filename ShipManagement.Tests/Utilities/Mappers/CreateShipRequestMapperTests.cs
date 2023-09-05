@@ -1,15 +1,4 @@
-﻿using System;
-using System.Linq;
-
-using AutoMapper;
-
-using ShipManagement.DTOs;
-using ShipManagement.Repositories.Models;
-using ShipManagement.Utilities.Mappers;
-
-using Xunit;
-
-namespace ShipManagement.Tests.Utilities.Mappers;
+﻿namespace ShipManagement.Tests.Utilities.Mappers;
 
 public class CreateShipRequestMapperTests
 {

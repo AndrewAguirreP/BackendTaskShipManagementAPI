@@ -59,7 +59,7 @@ namespace ShipManagement.Services
             if (shipDetail.CurrentGeoLocation == null)
                 return result;
 
-            return new GetClosestPortResponse() 
+            return new GetClosestPortResponse()
             {
                 ShipDetail = shipDetail,
                 ClosestPort = closestPortDetail,

@@ -1,7 +1,3 @@
-using ShipManagement.Common;
-using ShipManagement.DTOs;
-using ShipManagement.Repositories.Models;
-
 namespace ShipManagement.Tests.Utilities;
 
 public class ExtensionsTests

@@ -1,5 +1,4 @@
 ﻿using System.Runtime.Serialization;
-using System.Xml.Linq;
 
 namespace ShipManagement.DTOs
 {
@@ -19,6 +18,6 @@ namespace ShipManagement.DTOs
         public ShipDetail? ShipDetail { get; set; }
 
         [DataMember(Name = "travelInformation")]
-        public TravelInformation? TravelInformation { get; set; } 
+        public TravelInformation? TravelInformation { get; set; }
     }
 }

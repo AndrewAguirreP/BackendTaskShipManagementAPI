@@ -13,6 +13,7 @@ namespace ShipManagement.Repositories.Models
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
+
         public string? UniqueShipId { get; set; }
         public string? Name { get; set; }
         public ICollection<ShipStatus> ShipStatuses { get; set; }

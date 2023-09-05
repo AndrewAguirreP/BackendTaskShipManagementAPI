@@ -1,13 +1,5 @@
-﻿using AutoMapper;
+﻿namespace ShipManagement.Tests.Services;
 
-using Moq;
-
-using ShipManagement.DTOs;
-using ShipManagement.Repositories.Interfaces;
-using ShipManagement.Repositories.Models;
-using ShipManagement.Services;
-
-namespace ShipManagement.Tests.Services;
 public class PortServiceTests
 {
     [Fact]
@@ -22,10 +14,8 @@ public class PortServiceTests
         var samplePort = new Port { Id = 1, Name = "Port A" };
         var expectedPortDetail = new PortDetail { Id = 1, Name = "Port A" };
 
-
         portRepositoryMock.Setup(repo => repo.GetPortsAsync())
             .ReturnsAsync(new List<Port> { samplePort });
-
 
         mapperMock.Setup(mapper => mapper.Map<IEnumerable<Port>, IEnumerable<PortDetail>>(
             It.IsAny<IEnumerable<Port>>()))

@@ -1,13 +1,5 @@
-﻿
-using Microsoft.AspNetCore.Mvc;
+﻿namespace ShipManagement.Tests.Controllers;
 
-using Moq;
-
-using ShipManagement.Controllers;
-using ShipManagement.DTOs;
-using ShipManagement.Services.Interfaces;
-
-namespace ShipManagement.Tests.Controllers;
 public class ShipsControllerTests
 {
     [Fact]
@@ -16,7 +8,7 @@ public class ShipsControllerTests
         // Arrange
         var mockService = new Mock<IShipService>();
         mockService.Setup(service => service.GetShipsAsync())
-                   .ReturnsAsync(new List<ShipDetail> { new ShipDetail() { Id = 1} });
+                   .ReturnsAsync(new List<ShipDetail> { new ShipDetail() { Id = 1 } });
 
         var controller = new ShipsController(mockService.Object);
 

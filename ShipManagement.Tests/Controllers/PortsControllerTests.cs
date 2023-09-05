@@ -1,13 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿namespace ShipManagement.Tests.Controllers;
 
-using Moq;
-
-using ShipManagement.Controllers;
-using ShipManagement.DTOs;
-using ShipManagement.Repositories.Models;
-using ShipManagement.Services.Interfaces;
-
-namespace ShipManagement.Tests.Controllers;
 public class PortsControllerTests
 {
     [Fact]
@@ -16,8 +8,8 @@ public class PortsControllerTests
         // Arrange
         var portServiceMock = new Mock<IPortService>();
         portServiceMock.Setup(service => service.GetPortsAsync())
-            .ReturnsAsync(new List<PortDetail> { new PortDetail(){ Id = 1} });
-        
+            .ReturnsAsync(new List<PortDetail> { new PortDetail() { Id = 1 } });
+
         var controller = new PortsController(portServiceMock.Object);
 
         // Act

@@ -1,5 +1,4 @@
-﻿using ShipManagement.DTOs;
-using ShipManagement.Repositories.Models;
+﻿using ShipManagement.Repositories.Models;
 
 namespace ShipManagement.Repositories.Interfaces
 {

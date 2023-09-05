@@ -14,7 +14,6 @@ public class PortsController : ControllerBase
 
     public PortsController(IPortService portService) => _portService = portService;
 
-
     [HttpGet]
     [ProducesResponseType(typeof(IEnumerable<PortDetail>), StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status204NoContent)]

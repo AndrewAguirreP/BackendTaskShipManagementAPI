@@ -7,6 +7,7 @@ namespace ShipManagement.Repositories.Models
     {
         [Key]
         public int Id { get; set; }
+
         public int Velocity { get; set; }
         public double Latitude { get; set; }
         public double Longitude { get; set; }
@@ -14,6 +15,7 @@ namespace ShipManagement.Repositories.Models
 
         [ForeignKey("Ship")]
         public int ShipId { get; set; }
+
         public Ship Ship { get; set; } = null!;
     }
 }

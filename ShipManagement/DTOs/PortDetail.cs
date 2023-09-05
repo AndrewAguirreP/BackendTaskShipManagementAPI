@@ -1,6 +1,4 @@
-﻿using System.ComponentModel.DataAnnotations;
-using System.Runtime.Serialization;
-using System.Xml.Linq;
+﻿using System.Runtime.Serialization;
 
 namespace ShipManagement.DTOs
 {
@@ -11,7 +9,7 @@ namespace ShipManagement.DTOs
             GeoLocation = new GeoLocation();
         }
 
-        [DataMember(Name= "id")]
+        [DataMember(Name = "id")]
         public int Id { get; set; }
 
         [DataMember(Name = "name")]

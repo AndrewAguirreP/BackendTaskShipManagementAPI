@@ -1,16 +1,15 @@
 ﻿using ShipManagement.DTOs;
 using ShipManagement.Repositories.Models;
 
-using System;
-
 namespace ShipManagement.Common
 {
     public static class Extensions
     {
         private const double EarthRadiusNauticalMiles = 3440.065;
+
         public static bool IsNullOrEmpty<T>(this IEnumerable<T> source)
-        { 
-            if(source == null || !source.Any())
+        {
+            if (source == null || !source.Any())
                 return true;
 
             return false;
@@ -81,17 +80,17 @@ namespace ShipManagement.Common
 
             var angularDistance = 2 * Math.Atan2(Math.Sqrt(halfChordLength), Math.Sqrt(1 - halfChordLength));
 
-           return EarthRadiusNauticalMiles * angularDistance;
+            return EarthRadiusNauticalMiles * angularDistance;
         }
 
         public static GeoLocation ToGeoLocation(this Port port)
-        { 
+        {
             return new GeoLocation(port.Latitude, port.Longitude);
         }
 
         public static ShipStatus? GetLatestStatus(this Ship ship)
         {
-            if(ship == null || ship.ShipStatuses.IsNullOrEmpty())
+            if (ship == null || ship.ShipStatuses.IsNullOrEmpty())
                 return null;
 
             //ShipStatus can be Sorted By latest status Id or If Table Doesn't have key By LastCheckedIn DateTime.
