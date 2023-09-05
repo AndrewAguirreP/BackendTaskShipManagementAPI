@@ -4,7 +4,8 @@ The AE Backend Code Challenge Ship Management is a software application designed
 This README provides an overview of the system, its features, instructions for installation and usage, and information about GitHub Actions for continuous integration.
 
 This Simple API is based from AE's https://github.com/angloeastern/backend-coding-task Code Challenge.
-![image](https://github.com/AndrewAguirreP/BackendTaskShipManagementAPI/assets/11619541/5f18fb65-c541-4a25-a6dd-9b781b955a58)
+![image](https://github.com/AndrewAguirreP/BackendTaskShipManagementAPI/assets/11619541/c947e2c6-c7f9-4c3f-ad59-e5cadef7668a)
+
 
 
 
