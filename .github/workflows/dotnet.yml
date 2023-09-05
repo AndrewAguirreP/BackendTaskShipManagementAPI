@@ -31,6 +31,6 @@ jobs:
       if: always()
       with:
         name: Dotnet Tests
-        path: "**/test-results.trx"
+        path: "**/BackendTaskShipManagementAPI/BackendTaskShipManagementAPI/ShipManagement.Tests/TestResults/test-results.trx"
         reporter: dotnet-trx
         fail-on-error: true
